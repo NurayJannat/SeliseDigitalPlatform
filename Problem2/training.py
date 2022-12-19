@@ -71,13 +71,13 @@ def model_building(base_dir, epochs, steps_per_epoch):
 
     vgghist = model.fit(train_generator, validation_data = validation_generator, steps_per_epoch = steps_per_epoch, epochs = epochs, callbacks=callbacks_list, verbose=1)
 
-    with open('./trainHistoryDict', 'wb') as file_pi:
+    with open('/trainHistoryDictNew', 'wb') as file_pi:
         pickle.dump(vgghist.history, file_pi)
 
 
 if __name__ == "__main__":
-    base_dir = "./dataset"
-    epochs = 1
-    steps_per_epoch = 10
+    base_dir = "/dataset"
+    epochs = 10
+    steps_per_epoch = 100
     
     model_building(base_dir, epochs, steps_per_epoch)
