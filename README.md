@@ -22,9 +22,9 @@ All solutions of problems have been organized under respective folders.
 		```
 		docker run -it -v $(pwd)/weight:/weight -v $(pwd)/image:/image <image_id> python3 inference.py 
 		```
-	- To train from pretrained(weights from imagenet) VGG16
+	- To train from pretrained(weights from imagenet) VGG16, weight of best model will be saved in "training_output" folder.
 	```
-	docker run -it -v <path-to-dataset>:/dataset <image_id> python3 trainig.py
+	docker run -it -v <path-to-dataset>:/dataset -v $(pwd)/training_output:/training_output <image_id> python3 trainig.py
 	```
 3. Problem 3:
 	Run: python3 solution3.py

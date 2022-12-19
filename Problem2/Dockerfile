@@ -13,6 +13,8 @@ RUN pip install --upgrade pip
 RUN pip install protobuf==3.20.*
 RUN pip install tensorflow==2.8
 RUN pip install opencv-python
+RUN pip install pillow
+RUN pip install scipy
 
 COPY training.py .
 COPY inference.py .

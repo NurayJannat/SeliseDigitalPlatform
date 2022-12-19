@@ -4,7 +4,6 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.python.keras.models import Sequential
 from tensorflow.python.keras.layers import Dense, Flatten, GlobalAveragePooling2D
 import pickle
-import matplotlib.pyplot as plt
 import cv2
 import numpy as np
 
@@ -65,7 +64,7 @@ def model_building(base_dir, epochs, steps_per_epoch):
 
     model.compile(optimizer = tf.keras.optimizers.SGD(lr=0.0001), loss = 'categorical_crossentropy',metrics = ['acc'])
 
-    filepath="weights-improvement-{epoch:02d}-{acc:.2f}-{val_acc:.2f}-{val_loss:.2f}.hdf5"
+    filepath="/training_output/weights_trained.hdf5"
     checkpoint = ModelCheckpoint(filepath, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
     callbacks_list = [checkpoint]
 
